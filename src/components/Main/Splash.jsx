@@ -1,4 +1,4 @@
-import { Box, Flex, Heading, Text } from '@chakra-ui/react';
+import { Box, Flex, Heading, Text, Center } from '@chakra-ui/react';
 import React from 'react';
 
 export const Splash = ({
@@ -11,14 +11,13 @@ export const Splash = ({
   },
 }) => {
   return (
-    <Flex d="flex" justify="center">
+    <Center>
       <Box
-        bg="cyan.900"
+        bgImg="./bgimage.jpg"
         borderWidth="2px"
         borderColor="green.200"
-        borderRadius={['sm', 'md', 'lg', 'xl']}
+        borderRadius=""
         textAlign="center"
-        maxW={['sm', 'md', 'lg', 'xl']}
       >
         <Heading>Hi I'm {name}</Heading>
         <Text fontSize={['sm', 'md', 'lg', 'xl']}>
@@ -26,6 +25,6 @@ export const Splash = ({
           Please feel free email me! {email}
         </Text>
       </Box>
-    </Flex>
+    </Center>
   );
 };
