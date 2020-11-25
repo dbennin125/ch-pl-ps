@@ -1,4 +1,4 @@
-import { Box, Flex, Text } from '@chakra-ui/react';
+import { Box, Flex, Heading, Text } from '@chakra-ui/react';
 import React from 'react';
 
 export const Splash = ({
@@ -20,7 +20,7 @@ export const Splash = ({
         textAlign="center"
         maxW={['sm', 'md', 'lg', 'xl']}
       >
-        <Text fontSize={['lg', 'xl']}>Hi I'm {name}</Text>
+        <Heading>Hi I'm {name}</Heading>
         <Text fontSize={['sm', 'md', 'lg', 'xl']}>
           I'm a {role} currently located in {city}, {state}. {description}.
           Please feel free email me! {email}
