@@ -1,6 +1,5 @@
 import {
   Box,
-  Stack,
   useToken,
   useDisclosure,
   Button,
@@ -18,49 +17,54 @@ import {
 import { NavLink } from 'react-router-dom';
 import React from 'react';
 import { ColorModeSwitcher } from '../../ColorModeSwitcher';
+import './Header.css';
 
 export const Header = () => {
   const [isDesktop] = useMediaQuery('(min-width: 813px)');
-
   const [green100, blue200] = useToken('colors', ['green.200', 'blue.300']);
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   function makeLayout() {
     return (
-      <Box
-        m={8}
-        p={2}
-        fontSize={'3xl'}
-        borderWidth="2px"
-        borderColor="green.200"
-        borderRadius="full"
-        bg={`linear-gradient(${green100}, ${blue200})`}
-        maxW="100%"
-        d="flex"
-        textAlign="center"
-        justifyContent="center"
-      >
-        <Spacer />
-        <Center>
-          <ColorModeSwitcher />
-        </Center>
-        <Divider orientation="vertical" />
-        <Spacer />
-        <NavLink onClick={onClose} to="/">
-          Home
-        </NavLink>
-        <Divider orientation="vertical" />
-        <Spacer />
-        <NavLink onClick={onClose} to="/aboutme">
-          About
-        </NavLink>
-        <Divider orientation="vertical" />
-        <Spacer />
-        <NavLink onClick={onClose} to="/education">
-          Education
-        </NavLink>
-        <Spacer />
-      </Box>
+      <Center>
+        <Box
+          top={7}
+          width="98%"
+          fontSize={'3xl'}
+          borderWidth="2px"
+          borderColor="green.200"
+          borderRadius="full"
+          bg={`linear-gradient(${green100}, ${blue200})`}
+          maxW="100%"
+          d="flex"
+          textAlign="center"
+          justifyContent="center"
+          boxShadow="10px 5px 5px grey"
+          pos="fixed"
+          zIndex="1"
+        >
+          <Spacer />
+          <Center>
+            <ColorModeSwitcher />
+          </Center>
+          <Divider orientation="vertical" />
+          <Spacer />
+          <NavLink onClick={onClose} to="/">
+            Home
+          </NavLink>
+          <Divider orientation="vertical" />
+          <Spacer />
+          <NavLink onClick={onClose} to="/aboutme">
+            About
+          </NavLink>
+          <Divider orientation="vertical" />
+          <Spacer />
+          <NavLink onClick={onClose} to="/education">
+            Education
+          </NavLink>
+          <Spacer />
+        </Box>
+      </Center>
     );
   }
 
@@ -71,9 +75,8 @@ export const Header = () => {
       <>
         <Center>
           <Box
-            m={8}
-            p={2}
-            fontSize={['md', 'xl']}
+            top={7}
+            fontSize={['lg', 'xl']}
             borderWidth="2px"
             borderColor="green.200"
             borderRadius="full"
@@ -81,8 +84,11 @@ export const Header = () => {
             bg={`linear-gradient(${green100}, ${blue200})`}
             d="flex"
             justifyContent="center"
+            boxShadow="10px 5px 5px grey"
+            pos="fixed"
+            zIndex="1"
           >
-            <Button colorScheme={theme} onClick={onOpen}>
+            <Button zIndex="0" colorScheme={theme} onClick={onOpen}>
               Navigation
             </Button>
             <Drawer placement="bottom" onClose={onClose} isOpen={isOpen}>
@@ -90,40 +96,40 @@ export const Header = () => {
               <DrawerContent>
                 <DrawerHeader borderBottomWidth="1px">Links</DrawerHeader>
                 <DrawerBody>
-                  <Center>
-                    <Box
-                      m={8}
-                      p={2}
-                      fontSize={('md', 'lg', 'xl')}
-                      borderWidth="2px"
-                      borderColor="green.200"
-                      borderRadius="full"
-                      bg={`linear-gradient(${green100}, ${blue200})`}
-                      maxW={['md', 'lg', 'xl']}
-                      maxH={['md', 'lg', 'xl']}
-                    >
-                      <Stack direction="row" spacing={3} maxW="100%">
-                        <Spacer />
-                        <ColorModeSwitcher />
-                        <Divider orientation="vertical" />
-                        <Spacer />
-                        <NavLink onClick={onClose} to="/">
-                          Home
-                        </NavLink>
-                        <Divider orientation="vertical" />
-                        <Spacer />
-                        <NavLink onClick={onClose} to="/aboutme">
-                          About
-                        </NavLink>
-                        <Divider orientation="vertical" />
-                        <Spacer />
-                        <NavLink onClick={onClose} to="/education">
-                          Education
-                        </NavLink>
-                        <Spacer />
-                      </Stack>
-                    </Box>
-                  </Center>
+                  <Box
+                    mt={3}
+                    p={1}
+                    fontSize={('md', 'lg', 'xl')}
+                    borderWidth="2px"
+                    borderColor="green.200"
+                    borderRadius="full"
+                    bg={`linear-gradient(${green100}, ${blue200})`}
+                    maxW="100%"
+                    maxH={['md', 'lg', 'xl']}
+                    boxShadow="5px 1.5px 1.5px 1px grey"
+                    d="flex"
+                    textAlign="center"
+                    justifyContent="center"
+                  >
+                    <Spacer />
+                    <ColorModeSwitcher />
+                    <Divider orientation="vertical" />
+                    <Spacer />
+                    <NavLink onClick={onClose} to="/">
+                      Home
+                    </NavLink>
+                    <Divider orientation="vertical" />
+                    <Spacer />
+                    <NavLink onClick={onClose} to="/aboutme">
+                      About
+                    </NavLink>
+                    <Divider orientation="vertical" />
+                    <Spacer />
+                    <NavLink onClick={onClose} to="/education">
+                      Education
+                    </NavLink>
+                    <Spacer />
+                  </Box>
                 </DrawerBody>
               </DrawerContent>
             </Drawer>
