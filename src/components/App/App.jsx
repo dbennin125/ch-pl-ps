@@ -13,9 +13,6 @@ export default function App() {
         <Header />
         <Switch>
           <Route exact path="/" component={MainContainer} />
-          {/* <Route path="/" component={MainContainer} /> */}
-          <Route path="/aboutme" component={NewApp} />
-          <Route path="/education" component={NewApp} />
         </Switch>
       </ChakraProvider>
     </Router>

@@ -5,7 +5,7 @@ import { Logo } from '../../Logo';
 
 function NewApp() {
   return (
-    <Box textAlign="center" fontSize="xl">
+    <Box textAlign="center" fontSize="xl" id="education">
       <Grid minH="100vh" p={3}>
         <VStack spacing={8}>
           <Logo h="40vmin" pointerEvents="none" />
