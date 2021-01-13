@@ -10,7 +10,7 @@ import {
 } from '@chakra-ui/react';
 import React from 'react';
 
-export const Splash = ({
+export const SplashCopy2 = ({
   splash: {
     name,
     role,
@@ -24,16 +24,16 @@ export const Splash = ({
   const shadowSwap =
     colorMode === 'dark' ? '1px .8px .5px black' : '1px .8px .5px white';
   const pictureMobileSwap =
-    colorMode === 'dark' ? "url('mobileStatic.jpg')" : "url('lightbg.jpg')";
+    colorMode === 'dark' ? "url('mobileStatic.jpg')" : "url('js.png')";
 
   const pictureSwap =
-    colorMode === 'dark' ? "url('static.jpg')" : "url('lightbg.jpg')";
+    colorMode === 'dark' ? "url('static.jpg')" : "url('js.png')";
 
   const [isDesktop] = useMediaQuery('(min-width: 813px)');
 
   if (isDesktop) {
     return (
-      <Center 
+      <Center
       mt={2} 
       bgImg={pictureSwap}     
       bgPos='center'
@@ -41,25 +41,35 @@ export const Splash = ({
       bgAttachment='fixed'
       bgSize='110%' 
       h='100vh' 
-      id='main'
-      mb='100px'>
+      id="aboutme">
         <Container
           mt='80px'
-          textAlign='center'
-          borderColor='green.200'
+          // p={2}
+          textAlign="center"
+          // borderWidth="2px"
+          borderColor="green.200"
+          // shadow={['md', 'lg', 'xl']}
+          // bgImg={pictureSwap}
+          // bg={`linear-gradient(${blue}, ${green})`}
+          // bgPos="center"
+          // backgroundRepeat="no-repeat"
+          // bgAttachment="fixed"
+          // bgSize="110%"
+          // maxH="110%"
+          // h="75vh"
           centerContent
-          maxW='100%'
-          w='110%'
+          maxW="100%"
+          w="110%"
           borderRadius={['lg', 'xl']}
         >
-          <Heading m={4} p='2' textShadow={shadowSwap}>
+          <Heading m={4} p="2" textShadow={shadowSwap}>
             Hi I'm {name}
           </Heading>
           <Center>
             <Text
               fontSize={['xl', '2xl']}
               textShadow={shadowSwap}
-              fontFamily='monospace'
+              fontFamily="monospace"
               m={2}
               p={1}
             >
@@ -75,36 +85,36 @@ export const Splash = ({
     return (
       <>
         <Center 
-         mt={1} 
+        mt={1} 
          bgImg={pictureMobileSwap}     
          bgPos='center'
          backgroundRepeat='no-repeat'
          bgAttachment='fixed'
          bgSize='110%' h='100vh'
-         id='main'>
+        id="aboutme">
           <Container
-            mt={2}
-            p={2}
-            textAlign='center'
-            centerContent
-            // maxW='100%'
-            bgPos="center"
-            w='110%'
-            borderRadius={['lg', 'xl']}
+         mt={2}
+         p={2}
+         textAlign='center'
+         centerContent
+         // maxW='100%'
+         bgPos="center"
+         w='110%'
+         borderRadius={['lg', 'xl']}
           >
-            <Heading m={4} p='2' textShadow={shadowSwap}>
+            <Heading m={4} p="2" textShadow={shadowSwap}>
               Hi I'm {name}
             </Heading>
             <Center>
               <Text
                 fontSize={['xl', '2xl']}
                 textShadow={shadowSwap}
-                fontFamily='monospace'
+                fontFamily="monospace"
                 m={2}
                 p={1}
               >
                 I'm a {role} currently located in {city}, {state}. {description}
-                . Please feel free email me!
+                . Please feel free email me!{' '}
                 <Link href={`mailto:${email}`}>{email}</Link>
               </Text>
             </Center>

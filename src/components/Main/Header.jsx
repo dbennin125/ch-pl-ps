@@ -15,7 +15,8 @@ import {
   Spacer,
   useColorMode,
 } from '@chakra-ui/react';
-import { NavLink } from 'react-router-dom';
+
+import { Link } from 'react-scroll'
 import React from 'react';
 import { ColorModeSwitcher } from '../../ColorModeSwitcher';
 
@@ -31,49 +32,70 @@ export const Header = () => {
 
   function makeLayout() {
     return (
-      <Center id="splash">
-        <Box
-          top={7}
-          m={2}
-          width="98%"
+      
+      <Box
+        h='80px'
+        mt='-80px'
+          top='0'
+          width='100%'
           fontSize={'3xl'}
-          borderWidth="2px"
-          borderColor="green.200"
-          borderRadius="full"
+          borderWidth='2px'
+          borderColor='green.200'
           bg={`linear-gradient(${green100}, ${blue200})`}
-          maxW="100%"
-          d="flex"
-          textAlign="center"
-          justifyContent="center"
-          boxShadow="10px 5px 5px grey"
-          // pos="sticky"
-          // zIndex="1"
-          pos="fixed"
-          zIndex="1"
+          maxW='100%'
+          d='flex'
+          textAlign='center'
+          justifyContent='space-evenly'
+          justifyItems='center'
+          boxShadow='1px 5px 5px grey'
+          pos='sticky'
+          zIndex='10'
           textShadow={shadowSwap}
-        >
-          <Spacer />
+        > 
+          <Divider orientation='vertical' />
+            <Center>
+            <ColorModeSwitcher placement='center'/>
+            </Center>
+          <Divider orientation='vertical' />
           <Center>
-            <ColorModeSwitcher />
+          <Link 
+          smooth={true}
+          duration={500}
+          spy={true}
+          exact='true'
+          activeClass='true'
+          onClick={onClose} 
+          to='main'>
+            Home
+          </Link>
           </Center>
           <Divider orientation="vertical" />
-          <Spacer />
-          <NavLink onClick={onClose} to="#main">
-            Home
-          </NavLink>
-          <Divider orientation="vertical" />
-          <Spacer />
-          <NavLink onClick={onClose} to="#aboutme">
+          <Center>
+          <Link  
+          smooth={true}
+          duration={500}
+          spy={true}
+          exact='true'
+          activeClass='true'
+          onClick={onClose} to="aboutme">
             About
-          </NavLink>
+          </Link>
+          </Center>
           <Divider orientation="vertical" />
-          <Spacer />
-          <NavLink onClick={onClose} to="#education">
+          <Center>
+          <Link
+          smooth={true}
+          duration={500}
+          spy={true}
+          exact='true'
+          activeClass='true'
+           to="education">
             Education
-          </NavLink>
-          <Spacer />
+          </Link>
+          </Center>
+          <Divider orientation="vertical" />
+      
         </Box>
-      </Center>
     );
   }
 
@@ -97,7 +119,7 @@ export const Header = () => {
             // pos="-webkit-sticky"
             // pos="sticky"
             pos="fixed"
-            zIndex="1"
+            zIndex="10"
           >
             <Button colorScheme={theme} onClick={onOpen}>
               Navigation
@@ -129,19 +151,40 @@ export const Header = () => {
                     <ColorModeSwitcher />
                     <Divider orientation="vertical" />
                     <Spacer />
-                    <NavLink onClick={onClose} to="#main">
+                    <Link
+                     smooth={true}
+                     duration={500}
+                     spy={true}
+                     exact='true'
+                     activeClass='true'
+                     onClick={onClose}
+                    to="main">
                       Home
-                    </NavLink>
+                    </Link>
                     <Divider orientation="vertical" />
                     <Spacer />
-                    <NavLink onClick={onClose} to="#aboutme">
+                    <Link 
+                     smooth={true}
+                     duration={500}
+                     spy={true}
+                     exact='true'
+                     activeClass='true'
+                     onClick={onClose}
+                    to="aboutme">
                       About
-                    </NavLink>
+                    </Link>
                     <Divider orientation="vertical" />
                     <Spacer />
-                    <NavLink onClick={onClose} to="#education">
+                    <Link 
+                     smooth={true}
+                     duration={500}
+                     spy={true}
+                     exact='true'
+                     activeClass='true'
+                     onClick={onClose}
+                    to="education">
                       Education
-                    </NavLink>
+                    </Link>
                     <Spacer />
                   </Box>
                 </DrawerBody>
