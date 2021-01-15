@@ -6,7 +6,6 @@ export const MainContainer = () => {
   return (
     <>
       <SplashContainer />
-      <NewApp />
     </>
   );
 };

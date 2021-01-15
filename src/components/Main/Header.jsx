@@ -52,7 +52,7 @@ export const Header = () => {
           zIndex='10'
           textShadow={shadowSwap}
         > 
-          <Divider orientation='vertical' />
+      
             <Center>
             <ColorModeSwitcher placement='center'/>
             </Center>
@@ -93,7 +93,7 @@ export const Header = () => {
             Education
           </Link>
           </Center>
-          <Divider orientation="vertical" />
+ 
       
         </Box>
     );

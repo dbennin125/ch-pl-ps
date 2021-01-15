@@ -10,4 +10,50 @@ export const resumeData = {
     },
     email: 'dbennington125@gmail.com',
   },
+  technologies: [
+  {
+    name:'JavaScript', 
+    image: 'js.png',
+  },
+  {
+    name: 'Python', 
+    image:  'python.png',
+  },
+  {
+    name: 'TypeScript',
+    image:  'typescript.png',
+  },
+  {
+    name: 'CSS',
+    image:  'css-m.png',
+  }, 
+  {
+    name:  'HTML5',
+    image:  'html5.png',
+  },
+  {
+    name:  'React', 
+    image:  'logo192.png',
+  },
+  {
+    name: 'Redux',
+    image:  'logo-dark.png',
+  },
+  {
+    name:  'Jest',
+    image:  'jest.png', 
+  },
+  {
+    name:  'Github',
+    image: 'github.png', 
+  },
+  {
+    name:  'Node', 
+    image: 'node-logo.png', 
+  },
+  {
+    name: 'PostGres',
+    image: 'postgres.png'
+  }
+]
 };
