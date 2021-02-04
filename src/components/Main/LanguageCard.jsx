@@ -42,8 +42,8 @@ export const LanguageCard = ({ technologies }) => {
 
   const cardSizeWidthSwap =
     isDesktop === 'min-width: 813px' ? '125px' : '110px';
-  // const cardSizeHeightSwap =
-  //   isDesktop === 'min-width: 813px' ? '100px' : '45px';
+  const cardSizeHeightSwap =
+    isDesktop === 'min-width: 813px' ? '300px' : '45px';
 
   const techCard = technologies.map(item => (
     <HStack>
@@ -104,7 +104,7 @@ export const LanguageCard = ({ technologies }) => {
         // h="110vh"
         id="tech"
       >
-        <Box mb="25vh">
+        <Box h={cardSizeHeightSwap} w="75%" mb="100vh">
           <Center flexDir="column">
             <Heading
               m={4}
@@ -115,11 +115,10 @@ export const LanguageCard = ({ technologies }) => {
             >
               Current tech stack
             </Heading>
-            <Box w="65%">
+            <Flex w="100wv" justify="center" direction="row" wrap="wrap">
               {techCard}
-              {/* <Flex w="100wv" justify="center" direction="row" wrap="wrap"> */}
-              {/* </Flex> */}
-            </Box>
+            </Flex>
+            <Box></Box>
           </Center>
         </Box>
       </Center>
