@@ -14,9 +14,11 @@ import {
   Center,
   Spacer,
   useColorMode,
+  Link,
+  Text,
 } from '@chakra-ui/react';
 
-import { Link } from 'react-scroll'
+import { Link as ReachLink } from 'react-scroll';
 import React from 'react';
 import { ColorModeSwitcher } from '../../ColorModeSwitcher';
 
@@ -32,70 +34,86 @@ export const Header = () => {
 
   function makeLayout() {
     return (
-      
       <Box
-        h='80px'
-        mt='-80px'
-          top='0'
-          width='100%'
-          fontSize={'3xl'}
-          borderWidth='2px'
-          borderColor='green.200'
-          bg={`linear-gradient(${green100}, ${blue200})`}
-          maxW='100%'
-          d='flex'
-          textAlign='center'
-          justifyContent='space-evenly'
-          justifyItems='center'
-          boxShadow='1px 5px 5px grey'
-          pos='sticky'
-          zIndex='10'
-          textShadow={shadowSwap}
-        > 
-      
-            <Center>
-            <ColorModeSwitcher placement='center'/>
-            </Center>
-          <Divider orientation='vertical' />
-          <Center>
-          <Link 
-          smooth={true}
-          duration={500}
-          spy={true}
-          exact='true'
-          activeClass='true'
-          onClick={onClose} 
-          to='main'>
-            Home
-          </Link>
-          </Center>
-          <Divider orientation="vertical" />
-          <Center>
-          <Link  
-          smooth={true}
-          duration={500}
-          spy={true}
-          exact='true'
-          activeClass='true'
-          onClick={onClose} to="aboutme">
-            About
-          </Link>
-          </Center>
-          <Divider orientation="vertical" />
-          <Center>
+        h="80px"
+        mt="-80px"
+        top="0"
+        width="100%"
+        fontSize={'3xl'}
+        borderWidth="2px"
+        borderColor="green.200"
+        bg={`linear-gradient(${green100}, ${blue200})`}
+        maxW="100%"
+        d="flex"
+        textAlign="center"
+        justifyContent="space-evenly"
+        justifyItems="center"
+        boxShadow="1px 5px 5px grey"
+        pos="sticky"
+        zIndex="10"
+        textShadow={shadowSwap}
+      >
+        <Center>
+          <Text
+            bgGradient="linear(to-l, #7928CA,#FF0080)"
+            bgClip="text"
+            fontSize="4xl"
+            fontWeight="extrabold"
+          >
+            Dan Bennington
+          </Text>
+        </Center>
+        <Divider orientation="vertical" />
+        <Center>
           <Link
-          smooth={true}
-          duration={500}
-          spy={true}
-          exact='true'
-          activeClass='true'
-           to="education">
+            size={['md', 'xl']}
+            as={ReachLink}
+            smooth={true}
+            duration={500}
+            spy={true}
+            exact="true"
+            activeClass="true"
+            onClick={onClose}
+            to="about"
+          >
+            About Me
+          </Link>
+        </Center>
+        <Divider orientation="vertical" />
+        <Center>
+          <Link
+            size={['md', 'xl']}
+            as={ReachLink}
+            smooth={true}
+            duration={500}
+            spy={true}
+            exact="true"
+            activeClass="true"
+            onClick={onClose}
+            to="tech"
+          >
+            Tech Stack
+          </Link>
+        </Center>
+        <Divider orientation="vertical" />
+        <Center>
+          <Link
+            as={ReachLink}
+            smooth={true}
+            duration={500}
+            spy={true}
+            exact="true"
+            activeClass="true"
+            to="education"
+          >
             Education
           </Link>
-          </Center>
- 
-      
-        </Box>
+        </Center>
+        <Divider orientation="vertical" />
+        <Center>
+          <ColorModeSwitcher placement="center" />
+        </Center>
+      </Box>
     );
   }
 
@@ -152,37 +170,43 @@ export const Header = () => {
                     <Divider orientation="vertical" />
                     <Spacer />
                     <Link
-                     smooth={true}
-                     duration={500}
-                     spy={true}
-                     exact='true'
-                     activeClass='true'
-                     onClick={onClose}
-                    to="main">
+                      as={ReachLink}
+                      smooth={true}
+                      duration={500}
+                      spy={true}
+                      exact="true"
+                      activeClass="true"
+                      onClick={onClose}
+                      to="about"
+                    >
                       Home
                     </Link>
                     <Divider orientation="vertical" />
                     <Spacer />
-                    <Link 
-                     smooth={true}
-                     duration={500}
-                     spy={true}
-                     exact='true'
-                     activeClass='true'
-                     onClick={onClose}
-                    to="aboutme">
+                    <Link
+                      as={ReachLink}
+                      smooth={true}
+                      duration={500}
+                      spy={true}
+                      exact="true"
+                      activeClass="true"
+                      onClick={onClose}
+                      to="tech"
+                    >
                       About
                     </Link>
                     <Divider orientation="vertical" />
                     <Spacer />
-                    <Link 
-                     smooth={true}
-                     duration={500}
-                     spy={true}
-                     exact='true'
-                     activeClass='true'
-                     onClick={onClose}
-                    to="education">
+                    <Link
+                      as={ReachLink}
+                      smooth={true}
+                      duration={500}
+                      spy={true}
+                      exact="true"
+                      activeClass="true"
+                      onClick={onClose}
+                      to="education"
+                    >
                       Education
                     </Link>
                     <Spacer />

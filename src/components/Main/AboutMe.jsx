@@ -10,7 +10,7 @@ import {
 } from '@chakra-ui/react';
 import React from 'react';
 
-export const Splash = ({
+export const AboutMe = ({
   splash: {
     name,
     role,
@@ -33,33 +33,34 @@ export const Splash = ({
 
   if (isDesktop) {
     return (
-      <Center 
-      mt={2} 
-      bgImg={pictureSwap}     
-      bgPos='center'
-      backgroundRepeat='no-repeat'
-      bgAttachment='fixed'
-      bgSize='110%' 
-      h='100vh' 
-      id='main'
-      mb='100px'>
+      <Center
+        // mt={2}
+        bgImg={pictureSwap}
+        bgPos="center"
+        backgroundRepeat="no-repeat"
+        bgAttachment="fixed"
+        bgSize="110%"
+        h="100vh"
+        id="about"
+        mb="100px"
+      >
         <Container
-          mt='80px'
-          textAlign='center'
-          borderColor='green.200'
+          // mt='80px'
+          textAlign="center"
+          borderColor="green.200"
           centerContent
-          maxW='100%'
-          w='110%'
+          maxW="100%"
+          w="110%"
           borderRadius={['lg', 'xl']}
         >
-          <Heading m={4} p='2' textShadow={shadowSwap}>
+          <Heading m={4} p="2" textShadow={shadowSwap}>
             Hi I'm {name}
           </Heading>
           <Center>
             <Text
               fontSize={['xl', '2xl']}
               textShadow={shadowSwap}
-              fontFamily='monospace'
+              fontFamily="monospace"
               m={2}
               p={1}
             >
@@ -74,32 +75,35 @@ export const Splash = ({
   } else {
     return (
       <>
-        <Center 
-         mt={1} 
-         bgImg={pictureMobileSwap}     
-         bgPos='center'
-         backgroundRepeat='no-repeat'
-         bgAttachment='fixed'
-         bgSize='110%' h='100vh'
-         id='main'>
+        <Center
+          // mt={1}
+
+          bgImg={pictureMobileSwap}
+          bgPos="center"
+          backgroundRepeat="no-repeat"
+          bgAttachment="fixed"
+          bgSize="110%"
+          h="100vh"
+          id="main"
+        >
           <Container
-            mt={2}
-            p={2}
-            textAlign='center'
+            // mt={2}
+            // p={2}
+            textAlign="center"
             centerContent
             // maxW='100%'
             bgPos="center"
-            w='110%'
+            w="110%"
             borderRadius={['lg', 'xl']}
           >
-            <Heading m={4} p='2' textShadow={shadowSwap}>
+            <Heading m={4} p="2" textShadow={shadowSwap}>
               Hi I'm {name}
             </Heading>
             <Center>
               <Text
                 fontSize={['xl', '2xl']}
                 textShadow={shadowSwap}
-                fontFamily='monospace'
+                fontFamily="monospace"
                 m={2}
                 p={1}
               >

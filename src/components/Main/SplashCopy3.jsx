@@ -35,7 +35,8 @@ export const SplashCopy3 = ({
     return (
       <Center id="education">
         <Container
-        mt='90px'
+          mb="110px"
+          mt="90px"
           p={2}
           textAlign="center"
           borderWidth="2px"

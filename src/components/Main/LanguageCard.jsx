@@ -8,6 +8,8 @@ import {
   useColorMode,
   useMediaQuery,
   Divider,
+  HStack,
+  // Container,
 } from '@chakra-ui/react';
 import React from 'react';
 
@@ -23,7 +25,7 @@ export const LanguageCard = ({ technologies }) => {
       ? '0 6px 13px 0 #080808, 0 6px 20px 0 #101010'
       : '0 4px 8px 0 #DCDCDC, 0 6px 20px 0 #D3D3D3';
 
-  const cardBackGroundColorSwap = colorMode === 'dark' ? '#404040' : '#D8D8D8';
+  const cardBackGroundColorSwap = colorMode === 'dark' ? '#404040' : '#00B1AF';
 
   const imageBGColor = colorMode === 'dark' ? '#D8D8D8' : '#404040';
 
@@ -34,66 +36,92 @@ export const LanguageCard = ({ technologies }) => {
     colorMode === 'dark' ? "url('dark-bg-full.jpg')" : "url('js.png')";
 
   const pictureSwap =
-    colorMode === 'dark'
-      ? "url('dark-bg-full.jpg')"
-      : "url('bright-picture.jpg')";
+    colorMode === 'dark' ? "url('blackscreen.jpg')" : "url('light-screen.png')";
 
   const [isDesktop] = useMediaQuery('(min-width: 813px)');
 
-  const techElement = technologies.map(item => (
-    <Box
-      borderWidth="2px"
-      borderColor="green.200"
-      shadow={['md', 'lg', 'xl']}
-      key={item.name + item.image}
-      w={135}
-      m={3}
-      p={5}
-      bgColor={cardBackGroundColorSwap}
-    >
-      <Center pb={4} h={110}>
-        <Image
-          bgColor={imageBGColor}
-          p={2}
-          border={imageBorderSwap}
-          shadow={imageBorderShadowSwap}
-          borderRadius="15px"
-          src={item.image}
-          alt={item.name}
-        />
-      </Center>
-      <Divider orientation="horizontal" />
-      <Center p={3}>
-        <Text
-          align="center"
-          fontSize={['xl', '2xl']}
-          textShadow={shadowSwap}
-          fontFamily="monospace"
-          m={2}
-          p={1}
-        >
-          {item.name}
-        </Text>
-      </Center>
-    </Box>
+  const cardSizeWidthSwap =
+    isDesktop === 'min-width: 813px' ? '125px' : '110px';
+  // const cardSizeHeightSwap =
+  //   isDesktop === 'min-width: 813px' ? '100px' : '45px';
+
+  const techCard = technologies.map(item => (
+    <HStack>
+      <Box
+        borderWidth="2px"
+        borderColor="green.200"
+        shadow={['md', 'lg', 'xl']}
+        key={item.name + item.image}
+        w={cardSizeWidthSwap}
+        m={3}
+        p={5}
+        bgColor={cardBackGroundColorSwap}
+        className="card"
+      >
+        <Center pb={4} h={100}>
+          <Image
+            bgColor={imageBGColor}
+            p={2}
+            border={imageBorderSwap}
+            shadow={imageBorderShadowSwap}
+            borderRadius="15px"
+            src={item.image}
+            alt={item.name}
+          />
+        </Center>
+        <Divider orientation="horizontal" />
+        <Center p={3}>
+          <Text
+            align="center"
+            fontSize={['xl', '2xl']}
+            textShadow={shadowSwap}
+            fontFamily="monospace"
+            m={2}
+            p={1}
+          >
+            {item.name}
+          </Text>
+        </Center>
+      </Box>
+    </HStack>
   ));
 
   if (isDesktop) {
     return (
       <Center
-        mt="110px"
+        mt="80px"
+        border="10px 2px red"
+        t="0"
+        // mt="110px"
         bgImg={pictureSwap}
         bgPos="center"
         backgroundRepeat="no-repeat"
-        bgAttachment="fixed"
-        bgSize="110%"
-        h="110vh"
-        id="aboutme"
+        // bgAttachment="fixed"
+        // bgSize="500vw"
+        h="155vh"
+        maxH="100%"
+        w="100%"
+        // h="110vh"
+        id="tech"
       >
-        <Heading flexDir="column">Current tech stack</Heading>
-        <Flex justify="center" direction="row" wrap="wrap">
-          {techElement}
-        </Flex>
+        <Box mb="25vh">
+          <Center flexDir="column">
+            <Heading
+              m={4}
+              mb={3}
+              textShadow={shadowSwap}
+              fontFamily="monospace"
+              fontSize={['5xl', '7xl']}
+            >
+              Current tech stack
+            </Heading>
+            <Box w="65%">
+              {techCard}
+              {/* <Flex w="100wv" justify="center" direction="row" wrap="wrap"> */}
+              {/* </Flex> */}
+            </Box>
+          </Center>
+        </Box>
       </Center>
     );
   } else {
@@ -106,12 +134,27 @@ export const LanguageCard = ({ technologies }) => {
           backgroundRepeat="no-repeat"
           bgAttachment="fixed"
           bgSize="110%"
-          h="100vh"
+          h="75vh"
           id="aboutme"
         >
-          <Flex justify="center" direction="row" wrap="wrap">
-            {techElement}
-          </Flex>
+          <Box mb="20vh">
+            <Center flexDir="column">
+              <Heading
+                m={4}
+                mb={3}
+                textShadow={shadowSwap}
+                fontFamily="monospace"
+                fontSize={['xl', '2xl']}
+              >
+                Current tech stack
+              </Heading>
+              <Box w="35%">
+                <Flex w="100wv" justify="center" direction="row" wrap="wrap">
+                  {techCard}
+                </Flex>
+              </Box>
+            </Center>
+          </Box>
         </Center>
       </>
     );
